@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="AnyGPT: Any-to-Any Multimodal Large Language Model">
+    <meta name="keywords" content="text-to-image generation, Large Language Models, scene synthesis">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Any-GPT</title>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-PYVRSFMDRL');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="icon" href="./static/images/logo.png">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <link rel="stylesheet" href="./static/css/index-gradio.css">
+    <link rel="stylesheet" href="./static/css/live_theme.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title"
+                            style="display: flex;flex-direction: row;align-items: center;justify-content: center;margin-bottom: 5px;">
+                            <!-- <img src="./static/images/logo.png" width="60" height="60"
+                                style="margin-right: 10px;"> -->
+                            AnyGPT:
+                        </h1>
+                        <h1 class="title is-2 publication-title">Any-to-Any Multimodal Large Language Model</h1>
+                        <!-- <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="https://chocowu.github.io/">Shengqiong Wu</a>,</span>
+                            <span class="author-block">
+                                <a href="https://haofei.vip/">Hao Fei</a><sup>*</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="#">Leigang Qu</a>,</span>
+                            <span class="author-block">
+                                <a href="https://jiwei0523.github.io/">Wei Ji</a>,</span>
+                            <span class="author-block">
+                                <a href="https://www.chuatatseng.com/">Tat-Seng Chua</a>
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors" style="margin-top: 10px;">
+                            <span class="author-block"><a href="https://www.nextcenter.org/">NExT++ Lab</a>, National
+                                University of Singapore</span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block" style="font-size: 15px;">(<sup>*</sup>Correspondence)</span>
+                        </div> -->
+
+                        <!-- <div class="column has-text-centered">
+                            <div class="publication-links">\
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/pdf/2309.05519.pdf"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+
+                                <span class="link-block">
+                                    <a href="https://acc414b22d6839d28f.gradio.live" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fa fa-laugh"></i>
+                                        </span>
+                                        <span>Demo</span>
+                                    </a>
+                                </span>
+
+                                <span class="link-block">
+                                    <a href="https://github.com/NExT-GPT/NExT-GPT"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
+
+
+                                <span class="link-block">
+                                    <a href="https://github.com/NExT-GPT/NExT-GPT" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fa fa-database"></i>
+                                        </span>
+                                        <span>Dataset</span>
+                                    </a>
+                                </span>
+
+                                <span class="link-block">
+                                    <a href="https://www.youtube.com/watch?v=aqw2SCWeWD0"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-youtube"></i>
+                                        </span>
+                                        <span>Video</span>
+                                    </a>
+                                </span>
+
+
+                            </div>
+
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-2">Video Presentation</h2>
+                    <div class="publication-video">
+                        <iframe src="https://www.youtube.com/embed/aqw2SCWeWD0?si=jIKgOkew2rmRROUy" frameborder="0"
+                            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-2">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            We presents AnyGPT, the first autoregressive multimodal language model with the capability
+                            to comprehend and generate various modalities, including speech, text, images, and music.
+                            To unify multimodality, AnyGPT employs a discrete multimodal representation, harmonizing the
+                            representation space for both input and output.
+                            Utilizing the discrete representation,a new modality, akin to a foreign language, can be
+                            seamlessly integrated without necessitating alterations to the existing LLM architecture or
+                            training objectives.
+                            We construct an extensive corpus of text-centric multimodal alignment data for pretrain, In
+                            order to adapt the model for handling arbitrary combinations of multimodal input and output,
+                            we utilize advanced generative models, synthesizing a large-scale instruction dataset named
+                            MMIChat, comprising 108k samples of multi-turn conversations that feature a complex
+                            interweaving of multimodal elements.
+                            % Experimental results demonstrate that AnyGPT achieves comparable performance to
+                            specialized models in each modality, while also exhibiting an impressive capacity for
+                            Any-to-Any multimodal dialogue. This showcases a potential form of AGI for future
+                            applications.
+                            Experimental results demonstrate that AnyGPT possess an impressive capacity for any-to-any
+                            multimodal dialogue, showcasing a potential form of AGI for future applications.
+                            Demos are shown in
+                            \href{https://junzhan2000.github.io/AnyGPT.github.io/}{https://junzhan2000.github.io/AnyGPT.github.io}.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+            <br>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+
+            <div class="columns is-centered has-text-centered">
+                <h2 class="title is-2">Demonstrations</h2>
+                <br>
+            </div>
+
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <br />
+                    <!--            Example-1-->
+                    <h3 class="title is-4">• Example-1: Text + Image → Music</h3>
+                    <div class="content has-text-justified" style="width: 70pm">
+
+                        <div class="wrapper svelte-nab2ao"
+                            style="box-sizing: border-box;border-width: 2px;border-style: solid;border-color: #f66c0f;border-radius: 11px;padding: 25px;padding-top: 30px;padding-bottom: 30px;">
+
+                            <div class="message-wrap svelte-1uvwjgr" style="width: 100%;">
+
+                                <div class="message-row user-row svelte-1uvwjgr" style="width: 100%;">
+                                    <div class="avatar-container svelte-1uvwjgr">
+                                        <img class="avatar-image svelte-1uvwjgr" src="./static/images/user.png"
+                                            alt="avatar-user">
+                                    </div>
+                                    <div data-testid="user" class="message user svelte-1uvwjgr" dir="ltr"
+                                        style="border-style: solid;">
+                                        <!-- 下面的span靠右对齐 -->
+                                        <span class="md svelte-9tftx4 chatbot" style="text-align: right;">
+                                            <p>Generate a piece of background music for this image.</p>
+                                            <img style="display: inline-block;width: 250px;max-height: 400px;float: right;"
+                                                src="./static/images/1.png">
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="message-row bot-row svelte-1uvwjgr">
+                                    <div class="avatar-container svelte-1uvwjgr">
+                                        <img class="avatar-image svelte-1uvwjgr" src="./static/images/bot.png"
+                                            alt="avatar-bot">
+                                    </div>
+                                    <div data-testid="bot" class="message bot svelte-1uvwjgr" dir="ltr"
+                                        style="border-style: solid;">
+                                        <span class="md svelte-9tftx4 chatbot">
+                                            <p>I guess you may want some musics that sound soft.</p>
+                                            <p><audio playsinline="" controls="">
+                                                    <source type="audio/wav" src="./static/images/1.wav">
+                                                </audio>
+                                            </p>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--          End  Example-1-->
+
+                    
+
+                    <br />
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+
+            <!--    <div class="columns is-centered has-text-centered">-->
+            <!--        <h2 class="title is-2">Demonstrations</h2>-->
+            <!--      <br>-->
+            <!--    </div>-->
+
+            <div class="columns is-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3">Related Links</h2>
+
+                    <div class="content has-text-justified">
+                        <p>
+                            You may refer to related work that serves as foundations for our framework and code
+                            repository,
+                            such as <a href="https://github.com/lm-sys/FastChat">Vicuna</a>,
+                            <a href="https://github.com/facebookresearch/ImageBind">ImageBind</a>,
+                            <a href="https://huggingface.co/docs/diffusers/api/pipelines/stable_diffusion/text2img">Stable
+                                Diffusion</a>,
+                            <a href="https://github.com/haoheliu/AudioLDM">AudioLDM</a>,
+                            and <a href="https://huggingface.co/cerspense/zeroscope_v2_576w">Zeroscope</a>.
+                            We also partially draw inspirations from <a href="https://codi-gen.github.io/">CoDi</a>,
+                            <a href="https://vpgtrans.github.io/">VPGTrans</a>,
+                            <a href="https://github.com/DAMO-NLP-SG/Video-LLaMA">Video-LLaMA</a>,
+                            <a href="https://github.com/yxuansu/PandaGPT">PandaGPT</a>,
+                            <a href="https://github.com/kohjingyu/gill">GILL</a>,
+                            and <a href="https://github.com/Vision-CAIR/MiniGPT-4">MiniGPT-4</a>.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    </code></pre>
+    </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p style="text-align: center;">
+                            The webpage is built based on <a
+                                href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
